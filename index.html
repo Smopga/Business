@@ -1,160 +1,64 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HTML + CSS + JS Handbuch & Live Editor</title>
+  <title>Smopga</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
-      background: #f5f5f5;
-      line-height: 1.5;
+      padding: 0;
+      font-family: 'Arial Black', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: white;
+      text-align: center;
     }
-    h1, h2, h3 {
-      margin-top: 30px;
+
+    header {
+      padding: 100px 20px;
     }
-    .container {
-      display: flex;
-      gap: 20px;
-      margin-top: 20px;
+
+    header h1 {
+      font-size: 80px;
+      letter-spacing: 5px;
+      color: #FFD700;
+      text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500;
     }
-    .editor, .preview {
-      flex: 1;
-      background: white;
-      border: 1px solid #ccc;
-      padding: 10px;
-      border-radius: 5px;
+
+    /* Tape Design */
+    .tape {
+      position: relative;
+      background: black;
+      color: white;
+      padding: 60px 20px;
+      margin-top: 100px;
+      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
     }
-    textarea {
-      width: 100%;
-      height: 300px;
-      border: none;
-      outline: none;
-      resize: none;
-      font-family: monospace;
-      font-size: 14px;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      background: #fff;
-    }
-    .examples {
-      margin-top: 40px;
-      background: white;
-      padding: 20px;
-      border-radius: 5px;
-    }
-    code {
-      background: #eee;
-      padding: 2px 4px;
-      border-radius: 3px;
-      font-family: monospace;
-    }
-    ul {
-      list-style-type: square;
+
+    /* Holzschild */
+    .shield {
+      display: inline-block;
+      background: url('https://i.ibb.co/b2p4LZj/wood-texture.jpg') no-repeat center center/cover;
+      color: #fff;
+      padding: 40px 80px;
+      font-size: 40px;
+      font-weight: bold;
+      border: 6px solid #3b2a1a;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+      text-shadow: 2px 2px 4px #000;
     }
   </style>
 </head>
 <body>
-  <h1>HTML + CSS + JS Handbuch & Live Editor</h1>
-  <p>Hier findest du die wichtigsten HTML-Elemente, CSS-Eigenschaften und JavaScript-Grundlagen – plus einen Editor, um alles live auszuprobieren.</p>
 
-  <div class="container">
-    <div class="editor">
-      <h2>Editor</h2>
-      <textarea id="codeInput"><h2>Hallo Welt!</h2>
-<p>Dies ist ein Beispiel.</p>
-<style>
-  p { color: red; font-weight: bold; }
-</style>
-<script>
-  document.write("JS läuft!");
-</script></textarea>
-    </div>
-    <div class="preview">
-      <h2>Vorschau</h2>
-      <iframe id="preview"></iframe>
-    </div>
+  <header>
+    <h1>Smopga</h1>
+    <p>Games coming your way...</p>
+  </header>
+
+  <div class="tape">
+    <div class="shield">COMING SOON</div>
   </div>
 
-  <!-- HTML Abschnitt -->
-  <div class="examples">
-    <h2>HTML: Wichtige Elemente</h2>
-    <h3>Struktur</h3>
-    <ul>
-      <li><code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code> – Grundgerüst</li>
-      <li><code>&lt;div&gt;</code>, <code>&lt;span&gt;</code> – Container</li>
-      <li><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> – Semantische Struktur</li>
-    </ul>
-
-    <h3>Texte</h3>
-    <ul>
-      <li><code>&lt;h1&gt;...&lt;/h1&gt;</code> – Überschriften</li>
-      <li><code>&lt;p&gt;</code> – Absatz</li>
-      <li><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code> – Hervorhebungen</li>
-      <li><code>&lt;a href="..."&gt;</code> – Links</li>
-    </ul>
-
-    <h3>Formulare</h3>
-    <ul>
-      <li><code>&lt;input type="text"&gt;</code>, <code>&lt;input type="password"&gt;</code>, <code>&lt;input type="checkbox"&gt;</code></li>
-      <li><code>&lt;textarea&gt;</code> – Mehrzeiliges Eingabefeld</li>
-      <li><code>&lt;select&gt;&lt;option&gt;</code> – Dropdown</li>
-      <li><code>&lt;button&gt;</code> – Button</li>
-    </ul>
-
-    <h3>Medien</h3>
-    <ul>
-      <li><code>&lt;img src="bild.jpg"&gt;</code> – Bild</li>
-      <li><code>&lt;audio controls&gt;</code> – Audio</li>
-      <li><code>&lt;video controls&gt;</code> – Video</li>
-      <li><code>&lt;iframe&gt;</code> – Externe Inhalte</li>
-    </ul>
-  </div>
-
-  <!-- CSS Abschnitt -->
-  <div class="examples">
-    <h2>CSS: Wichtige Eigenschaften</h2>
-    <ul>
-      <li><code>color</code>, <code>background-color</code></li>
-      <li><code>font-size</code>, <code>font-weight</code></li>
-      <li><code>margin</code>, <code>padding</code>, <code>border</code></li>
-      <li><code>display</code>: block, inline, flex, grid</li>
-      <li><code>position</code>: static, relative, absolute, fixed, sticky</li>
-      <li><code>width</code>, <code>height</code>, <code>max-width</code></li>
-      <li><code>transition</code>, <code>transform</code>, <code>animation</code></li>
-    </ul>
-  </div>
-
-  <!-- JavaScript Abschnitt -->
-  <div class="examples">
-    <h2>JavaScript: Wichtige Konzepte</h2>
-    <ul>
-      <li>Variablen: <code>let x = 5;</code>, <code>const name = "Test";</code></li>
-      <li>Funktionen: <code>function hallo() { alert("Hallo!"); }</code></li>
-      <li>DOM: <code>document.getElementById("id")</code>, <code>document.querySelector()</code></li>
-      <li>Events: <code>element.addEventListener("click", fn)</code></li>
-      <li>Schleifen: <code>for</code>, <code>while</code></li>
-      <li>Bedingungen: <code>if</code>, <code>else</code>, <code>switch</code></li>
-      <li>Klassen & Objekte: <code>class Auto {}</code></li>
-      <li>Arrays: <code>[1,2,3].forEach(x =&gt; ...)</code></li>
-    </ul>
-  </div>
-
-  <script>
-    const textarea = document.getElementById("codeInput");
-    const iframe = document.getElementById("preview");
-
-    function updatePreview() {
-      const code = textarea.value;
-      iframe.srcdoc = code;
-    }
-
-    textarea.addEventListener("input", updatePreview);
-    updatePreview(); // Initial
-  </script>
 </body>
 </html>
