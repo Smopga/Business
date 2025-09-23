@@ -1,19 +1,18 @@
-hallo dies ist gerade unter arbeit
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>HTML Objekte & Live Editor</title>
+  <title>HTML + CSS + JS Handbuch & Live Editor</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
       background: #f5f5f5;
+      line-height: 1.5;
     }
-    h1 {
-      text-align: center;
+    h1, h2, h3 {
+      margin-top: 30px;
     }
     .container {
       display: flex;
@@ -54,18 +53,26 @@ hallo dies ist gerade unter arbeit
       border-radius: 3px;
       font-family: monospace;
     }
+    ul {
+      list-style-type: square;
+    }
   </style>
 </head>
 <body>
-  <h1>HTML Objekte & Live Editor</h1>
+  <h1>HTML + CSS + JS Handbuch & Live Editor</h1>
+  <p>Hier findest du die wichtigsten HTML-Elemente, CSS-Eigenschaften und JavaScript-Grundlagen – plus einen Editor, um alles live auszuprobieren.</p>
 
   <div class="container">
     <div class="editor">
       <h2>Editor</h2>
       <textarea id="codeInput"><h2>Hallo Welt!</h2>
-<p>Hier kannst du HTML schreiben.</p>
-<input type="text" placeholder="Ein Eingabefeld">
-<button>Klick mich!</button></textarea>
+<p>Dies ist ein Beispiel.</p>
+<style>
+  p { color: red; font-weight: bold; }
+</style>
+<script>
+  document.write("JS läuft!");
+</script></textarea>
     </div>
     <div class="preview">
       <h2>Vorschau</h2>
@@ -73,19 +80,67 @@ hallo dies ist gerade unter arbeit
     </div>
   </div>
 
+  <!-- HTML Abschnitt -->
   <div class="examples">
-    <h2>Wichtige HTML-Objekte</h2>
+    <h2>HTML: Wichtige Elemente</h2>
+    <h3>Struktur</h3>
     <ul>
-      <li><code>&lt;input type="text"&gt;</code> → Einfache Texteingabe</li>
-      <li><code>&lt;input type="password"&gt;</code> → Passwortfeld</li>
-      <li><code>&lt;input type="checkbox"&gt;</code> → Checkbox</li>
-      <li><code>&lt;input type="radio"&gt;</code> → Radio-Button</li>
-      <li><code>&lt;button&gt;</code> → Ein Button</li>
-      <li><code>&lt;textarea&gt;</code> → Mehrzeiliges Eingabefeld</li>
-      <li><code>&lt;select&gt; &lt;option&gt;</code> → Dropdown Auswahl</li>
-      <li><code>&lt;img src="bild.jpg"&gt;</code> → Bild einfügen</li>
-      <li><code>&lt;a href="...">Link&lt;/a&gt;</code> → Link</li>
-      <li><code>&lt;video&gt;</code> / <code>&lt;audio&gt;</code> → Multimedia Elemente</li>
+      <li><code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code> – Grundgerüst</li>
+      <li><code>&lt;div&gt;</code>, <code>&lt;span&gt;</code> – Container</li>
+      <li><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> – Semantische Struktur</li>
+    </ul>
+
+    <h3>Texte</h3>
+    <ul>
+      <li><code>&lt;h1&gt;...&lt;/h1&gt;</code> – Überschriften</li>
+      <li><code>&lt;p&gt;</code> – Absatz</li>
+      <li><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code> – Hervorhebungen</li>
+      <li><code>&lt;a href="..."&gt;</code> – Links</li>
+    </ul>
+
+    <h3>Formulare</h3>
+    <ul>
+      <li><code>&lt;input type="text"&gt;</code>, <code>&lt;input type="password"&gt;</code>, <code>&lt;input type="checkbox"&gt;</code></li>
+      <li><code>&lt;textarea&gt;</code> – Mehrzeiliges Eingabefeld</li>
+      <li><code>&lt;select&gt;&lt;option&gt;</code> – Dropdown</li>
+      <li><code>&lt;button&gt;</code> – Button</li>
+    </ul>
+
+    <h3>Medien</h3>
+    <ul>
+      <li><code>&lt;img src="bild.jpg"&gt;</code> – Bild</li>
+      <li><code>&lt;audio controls&gt;</code> – Audio</li>
+      <li><code>&lt;video controls&gt;</code> – Video</li>
+      <li><code>&lt;iframe&gt;</code> – Externe Inhalte</li>
+    </ul>
+  </div>
+
+  <!-- CSS Abschnitt -->
+  <div class="examples">
+    <h2>CSS: Wichtige Eigenschaften</h2>
+    <ul>
+      <li><code>color</code>, <code>background-color</code></li>
+      <li><code>font-size</code>, <code>font-weight</code></li>
+      <li><code>margin</code>, <code>padding</code>, <code>border</code></li>
+      <li><code>display</code>: block, inline, flex, grid</li>
+      <li><code>position</code>: static, relative, absolute, fixed, sticky</li>
+      <li><code>width</code>, <code>height</code>, <code>max-width</code></li>
+      <li><code>transition</code>, <code>transform</code>, <code>animation</code></li>
+    </ul>
+  </div>
+
+  <!-- JavaScript Abschnitt -->
+  <div class="examples">
+    <h2>JavaScript: Wichtige Konzepte</h2>
+    <ul>
+      <li>Variablen: <code>let x = 5;</code>, <code>const name = "Test";</code></li>
+      <li>Funktionen: <code>function hallo() { alert("Hallo!"); }</code></li>
+      <li>DOM: <code>document.getElementById("id")</code>, <code>document.querySelector()</code></li>
+      <li>Events: <code>element.addEventListener("click", fn)</code></li>
+      <li>Schleifen: <code>for</code>, <code>while</code></li>
+      <li>Bedingungen: <code>if</code>, <code>else</code>, <code>switch</code></li>
+      <li>Klassen & Objekte: <code>class Auto {}</code></li>
+      <li>Arrays: <code>[1,2,3].forEach(x =&gt; ...)</code></li>
     </ul>
   </div>
 
@@ -99,7 +154,7 @@ hallo dies ist gerade unter arbeit
     }
 
     textarea.addEventListener("input", updatePreview);
-    updatePreview(); // Start mit initialem Inhalt
+    updatePreview(); // Initial
   </script>
 </body>
 </html>
