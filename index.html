@@ -1,64 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Smopga</title>
+  <title>Meine Skriptsprache</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial Black', sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-      color: white;
-      text-align: center;
+      font-family: monospace;
+      background: #1e1e1e;
+      color: #eee;
+      padding: 20px;
     }
-
-    header {
-      padding: 100px 20px;
+    textarea {
+      width: 100%;
+      height: 200px;
+      background: #111;
+      color: #0f0;
+      border: 1px solid #444;
+      padding: 10px;
     }
-
-    header h1 {
-      font-size: 80px;
-      letter-spacing: 5px;
-      color: #FFD700;
-      text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500;
-    }
-
-    /* Tape Design */
-    .tape {
-      position: relative;
-      background: black;
-      color: white;
-      padding: 60px 20px;
-      margin-top: 100px;
-      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-    }
-
-    /* Holzschild */
-    .shield {
-      display: inline-block;
-      background: url('https://i.ibb.co/b2p4LZj/wood-texture.jpg') no-repeat center center/cover;
+    button {
+      background: #333;
       color: #fff;
-      padding: 40px 80px;
-      font-size: 40px;
-      font-weight: bold;
-      border: 6px solid #3b2a1a;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-      text-shadow: 2px 2px 4px #000;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin: 5px 0;
+    }
+    button:hover {
+      background: #555;
+    }
+    #output {
+      background: #000;
+      color: #0f0;
+      padding: 10px;
+      border: 1px solid #444;
+      margin-top: 10px;
+      white-space: pre-wrap;
+    }
+    #help {
+      background: #222;
+      padding: 10px;
+      margin-top: 20px;
+      border: 1px solid #555;
     }
   </style>
 </head>
 <body>
+  <h1>Meine eigene Skriptsprache</h1>
+  <p>Schreibe deine Befehle ins Textfeld und klicke auf "Ausführen".</p>
 
-  <header>
-    <h1>Smopga</h1>
-    <p>Games coming your way...</p>
-  </header>
+  <textarea id="code">// Beispiel:
+// PRINT Hallo Welt
+// ADD 5 7
+// REPEAT 3 Hallo
+</textarea>
+  <br>
+  <button onclick="runCode()">Ausführen</button>
+  <button onclick="insertTemplate()">Template einfügen</button>
 
-  <div class="tape">
-    <div class="shield">COMING SOON</div>
+  <div id="output">[Ausgabe erscheint hier]</div>
+
+  <div id="help">
+    <h2>Hilfe / Befehle</h2>
+    <ul>
+      <li><b>PRINT text</b> → gibt Text aus</li>
+      <li><b>ADD a b</b> → addiert zwei Zahlen</li>
+      <li><b>REPEAT n text</b> → wiederholt Text n-mal</li>
+    </ul>
   </div>
 
+  <script>
+    function runCode() {
+      const code = document.getElementById("code").value.split("\n");
+      let output = "";
+
+      for (let line of code) {
+        line = line.trim();
+        if (line.startsWith("//") || line === "") continue;
+
+        const parts = line.split(" ");
+        const cmd = parts[0].toUpperCase();
+
+        if (cmd === "PRINT") {
+          output += parts.slice(1).join(" ") + "\n";
+        } else if (cmd === "ADD") {
+          const a = Number(parts[1]);
+          const b = Number(parts[2]);
+          output += (a + b) + "\n";
+        } else if (cmd === "REPEAT") {
+          const n = Number(parts[1]);
+          const text = parts.slice(2).join(" ");
+          for (let i = 0; i < n; i++) {
+            output += text + "\n";
+          }
+        } else {
+          output += "[Unbekannter Befehl: " + line + "]\n";
+        }
+      }
+
+      document.getElementById("output").innerText = output;
+    }
+
+    function insertTemplate() {
+      document.getElementById("code").value =
+`// Template für deine Skriptsprache
+PRINT Hallo Welt
+ADD 3 4
+REPEAT 5 Test`;
+    }
+  </script>
 </body>
 </html>
